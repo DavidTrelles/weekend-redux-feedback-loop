@@ -7,7 +7,7 @@ const Feeling = () =>{
     const dispatch = useDispatch();
 
     const handleChange = (event) => {
-        dispatch({type: 'SET-FEELING', payload: event.target.value})
+        dispatch({type: 'SET_FEELING', payload: event.target.value})
     }
 
     return (
@@ -15,7 +15,7 @@ const Feeling = () =>{
             <h3>How are you feeling today?</h3>
             <div>
                 {/* Step 3: getter & setter */}
-                <input value={name} onChange={handleChange} className="input" type="number" />
+                <input value={feeling} onChange={handleChange} className="input" type="number" />
                 <button onClick={() => history.push('/understanding')} className="button">Next</button>
             </div>
         </>
