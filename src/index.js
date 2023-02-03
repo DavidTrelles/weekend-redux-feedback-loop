@@ -33,13 +33,23 @@ const understanding = (state ='', action) => {
     }
     return state;
     }
+
+    const comments = (state ='', action) => {
+    if (action.type === "SET_COMMENTS") {
+        return action.payload;
+    }else if(action.type === 'CLEAR_ALL') {
+        return '';
+    }
+    return state;
+    }
 const storeInstance = createStore(
     // reducers go here
     combineReducers(
         {
             feeling,
             understanding,
-            supported
+            supported,
+            comments
         }
     ),
     applyMiddleware(logger)
