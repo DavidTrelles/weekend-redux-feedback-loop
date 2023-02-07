@@ -1,5 +1,12 @@
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 function Success() {
-  const handleClick = () => {};
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const handleClick = () => {
+    dispatch({ type: "CLEAR_ALL" });
+    history.push("/");
+  };
   return (
     <>
       <h1>Success!!!</h1>
